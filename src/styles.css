@@ -1,0 +1,238 @@
+:root {
+    font-size: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Comfortaa', cursive;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #cee8ec;
+    background: #0f2027;
+    background: -webkit-linear-gradient(to top, #2f7391, #203a43, #0b2936);
+    background: linear-gradient(to top, #2f8291, #203e43, #041f2b);
+}
+
+#root {
+    min-height: 100%;
+    display: grid;
+}
+
+.auth-form {
+    margin: 14vh auto;
+    position: relative;
+    max-width: 340px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.auth-strategy {
+    display: grid;
+    row-gap: 16px;
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.title {
+    color: #ffffff;
+}
+.caption {
+    font-size: 0.9rem;
+}
+
+.btn {
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    font-family: inherit;
+    font-size: 1.1rem;
+    color: black;
+    border-radius: 4px;
+    background-color: rgb(255 215 98);
+    box-shadow: 0px 0px 10px rgba(39, 30, 4, 0.5),
+        0px 2px 8px rgb(212, 195, 145, 0.3),
+        0px 2px 20px rgba(255, 254, 251, 0.2);
+    transition: box-shadow 0.1s ease-in;
+    padding: 0.6rem 1.2rem;
+    border: none;
+}
+
+.btn:hover,
+.btn:focus {
+    outline: none;
+    color: white;
+    background-color: rgb(255 215 98);
+    box-shadow: 0px 0px 10px rgba(39, 30, 4, 0.2),
+        0px 2px 8px rgb(212, 195, 145, 0.4), 0px 2px 20px rgb(255, 200, 62, 0.5);
+}
+
+.btn-secondary {
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    font-family: inherit;
+    font-size: 1.1rem;
+    background-color: transparent;
+    border: none;
+}
+
+.label {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    grid-template-rows: 20px 50px;
+    grid-template-areas:
+        'name error'
+        'input input';
+    row-gap: 12px;
+}
+
+.input {
+    grid-area: input;
+    height: 100%;
+    width: 100%;
+    color: white;
+    opacity: 0.4;
+    border: 1px solid #c1e3f3;
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1rem;
+    background: #acd0df31;
+    border-radius: 4px;
+    transition: opacity 0.1s cubic-bezier(0.8, 0, 1, 1);
+}
+
+.error {
+    border: 1px solid #e05514;
+    color: #e05514;
+    background: #e0551428;
+    opacity: 0.9;
+}
+
+.input::placeholder {
+    color: #acd0dfab;
+}
+
+.input:hover {
+    opacity: 0.8;
+}
+
+.input:focus {
+    outline: none;
+    opacity: 1;
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.2);
+}
+
+.error-message {
+    grid-area: error;
+    place-self: end;
+    color: #e05514;
+    font-weight: 600;
+    font-size: 0.6rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.controls-container {
+    display: flex;
+    gap: 12px;
+}
+
+.control {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 8px;
+}
+
+.radio + label {
+    cursor: pointer;
+    opacity: 0.5;
+    color: white;
+}
+
+.radio:hover + label {
+    opacity: 0.8;
+}
+
+.radio:checked + label {
+    opacity: 1;
+}
+
+.radio {
+    appearance: none;
+    opacity: 0.4;
+    cursor: pointer;
+    display: block;
+    width: 100px;
+    height: 4px;
+    border-radius: 1px;
+    border-color: white;
+    background-color: white;
+    background-repeat: no-repeat;
+    transition: opacity 0.25s cubic-bezier(0.8, 0, 1, 1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.034);
+    outline: none;
+}
+
+.radio:checked {
+    transition: opacity 0.25s cubic-bezier(0, 0, 0.2, 1);
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    opacity: 1;
+}
+
+.radio:hover {
+    -webkit-transition: opacity 0.1s cubic-bezier(0, 0, 0.2, 1);
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    opacity: 0.8;
+}
+
+#recaptcha {
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    margin: auto;
+}
+
+.content {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/green-dust-and-scratches.png');
+    transition: transform 1s cubic-bezier(0.77, 0.115, 0, 1.09);
+}
+
+.container {
+    width: 580px;
+    height: 270px;
+    padding: 20px 30px;
+    background-color: rgb(51, 86, 92);
+    box-shadow: 2px 4px 16px rgba(20, 40, 46, 0.4),
+        5px 12px 28px rgba(19, 32, 36, 0.4);
+    border-radius: 4px;
+    display: grid;
+    place-items: center;
+}
